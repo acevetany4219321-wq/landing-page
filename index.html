@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mekong HR | Công ty Cổ phần Cung ứng Nhân lực Mekong</title>
+  <meta name="description" content="Công ty Cổ phần Cung ứng Nhân lực Mekong — cung ứng và quản lý nguồn lao động trong nước. MST 0315999152. Trụ sở Saigon Trade Center, Quận 1, TP.HCM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-deep: #071526;
+      --navy-mid: #123056;
+      --gold: #c9a227;
+      --gold-light: #e4c76a;
+      --gold-soft: #f6edd4;
+      --teal: #1a6b73;
+      --white: #ffffff;
+      --off: #f6f4ef;
+      --text: #1c2430;
+      --muted: #5c6674;
+      --line: rgba(201, 162, 39, 0.28);
+      --shadow: 0 18px 50px rgba(11, 31, 58, 0.12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font-family: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 21, 38, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--gold-light), var(--gold));
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      box-shadow: 0 6px 16px rgba(201, 162, 39, 0.35);
+    }
+    .brand-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+    .brand-text span {
+      display: block;
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600 !important;
+    }
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        linear-gradient(120deg, rgba(7,21,38,0.88), rgba(18,48,86,0.72)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: white;
+      padding: 92px 0 84px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 80px;
+      background: linear-gradient(transparent, var(--white));
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.15;
+      max-width: 16ch;
+      margin-bottom: 18px;
+    }
+    .hero p.lead {
+      color: rgba(255,255,255,0.82);
+      max-width: 52ch;
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s transform, 0.2s box-shadow;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-ghost {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .meta-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+    }
+    .meta-row strong { display: block; color: white; font-size: 15px; }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(201,162,39,0.28);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card h3 {
+      font-size: 18px;
+      margin-bottom: 14px;
+      color: var(--gold-light);
+    }
+    .hero-card li {
+      list-style: none;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 42px;
+    }
+    .kicker {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .muted { color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .about-copy p { margin-bottom: 16px; }
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .fact {
+      background: var(--off);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .fact span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+    .fact strong { color: var(--navy); font-size: 15px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ece7db;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--gold-soft);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .card h3 { color: var(--navy); margin-bottom: 8px; font-size: 18px; }
+
+    .why {
+      background: var(--navy-deep);
+      color: white;
+    }
+    .why h2, .why .muted { color: white; }
+    .why .muted { opacity: 0.75; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+    }
+    .steps { display: grid; gap: 16px; }
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.16);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: -48px;
+      position: relative;
+      z-index: 2;
+    }
+    .stat {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .stat b {
+      display: block;
+      font-size: 26px;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+    }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+    .contact-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .contact-box a { color: var(--gold-light); }
+    .contact-item { margin: 16px 0; }
+    .contact-item small { display: block; opacity: 0.65; }
+    form {
+      background: var(--off);
+      border-radius: 24px;
+      padding: 28px;
+      display: grid;
+      gap: 12px;
+    }
+    label { font-size: 13px; font-weight: 600; color: var(--navy); }
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid #ddd4bf;
+      background: white;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-note {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #e8f6ea;
+      color: #1e6b32;
+      font-size: 14px;
+    }
+    .form-note.show { display: block; }
+
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.78);
+      padding: 42px 0 24px;
+      font-size: 14px;
+    }
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    footer strong { color: white; }
+    .copy { padding-top: 18px; font-size: 12px; opacity: 0.7; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: var(--navy-deep);
+        padding: 20px;
+        gap: 16px;
+      }
+      .menu-btn { display: grid; place-items: center; }
+      .hero-grid, .about-grid, .cards, .why-grid, .contact-grid, .stats, .foot, .form-row, .facts {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 64px 0 72px; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#trang-chu">
+        <div class="logo">MK</div>
+        <div class="brand-text">
+          <strong>MEKONG HR</strong>
+          <span>Human Resources JSC</span>
+        </div>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#dich-vu">Dịch vụ</a></li>
+        <li><a href="#quy-trinh">Quy trình</a></li>
+        <li><a href="#lien-he" class="nav-cta">Liên hệ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="trang-chu">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Công ty cổ phần • Thành lập 2019 • MST 0315999152</div>
+          <h1>Cung ứng &amp; quản lý nguồn nhân lực trong nước</h1>
+          <p class="lead">
+            Công ty Cổ phần Cung ứng Nhân lực Mekong đồng hành cùng doanh nghiệp tìm kiếm, sắp xếp và quản lý nguồn lao động phù hợp — chuyên nghiệp, minh bạch, đúng pháp luật.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#lien-he">Nhận tư vấn miễn phí</a>
+            <a class="btn btn-ghost" href="tel:+84565173912">Gọi +84 565 173 912</a>
+          </div>
+          <div class="meta-row">
+            <div><strong>Saigon Trade Center</strong>Quận 1, TP. Hồ Chí Minh</div>
+            <div><strong>Đang hoạt động</strong>Đăng ký lần đầu 04/11/2019</div>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Thông tin pháp lý</h3>
+          <ul>
+            <li><span class="dot"></span>Tên tiếng Việt: Công ty Cổ phần Cung ứng Nhân lực Mekong</li>
+            <li><span class="dot"></span>Tên tiếng Anh: Mekong Supply of Human Resources JSC</li>
+            <li><span class="dot"></span>Mã số doanh nghiệp: 0315999152</li>
+            <li><span class="dot"></span>Người đại diện: Lý Ngọc Điệp</li>
+            <li><span class="dot"></span>Vốn điều lệ: 5.000.000.000 đồng</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>2019</b><span>Năm thành lập</span></div>
+        <div class="stat"><b>5 tỷ</b><span>Vốn điều lệ (VNĐ)</span></div>
+        <div class="stat"><b>Q.1</b><span>Trụ sở trung tâm TP.HCM</span></div>
+        <div class="stat"><b>100%</b><span>Tập trung lao động trong nước</span></div>
+      </div>
+    </div>
+
+    <section id="gioi-thieu">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <div class="kicker">Về chúng tôi</div>
+          <h2>Đối tác nhân sự đáng tin cậy tại TP. Hồ Chí Minh</h2>
+          <p class="muted">
+            Mekong Supply of Human Resources Joint Stock Company được cấp Giấy chứng nhận đăng ký doanh nghiệp ngày 04/11/2019, với lần thay đổi gần nhất ngày 31/10/2022. Chúng tôi hoạt động trong lĩnh vực cung ứng và quản lý nguồn lao động trong nước (không bao gồm hoạt động cho thuê lại lao động).
+          </p>
+          <p class="muted">
+            Trụ sở đặt tại Tòa nhà Sài Gòn Trade Center — vị trí trung tâm Quận 1 — thuận tiện cho doanh nghiệp gặp gỡ, tư vấn và triển khai giải pháp nhân sự.
+          </p>
+        </div>
+        <div class="facts">
+          <div class="fact"><span>Tên viết tắt</span><strong>MEKONG SUPPLY OF HUMAN RESOURCES JSC</strong></div>
+          <div class="fact"><span>Loại hình</span><strong>Công ty cổ phần ngoài nhà nước</strong></div>
+          <div class="fact"><span>Ngành chính</span><strong>Cung ứng &amp; quản lý nguồn lao động</strong></div>
+          <div class="fact"><span>Cơ quan thuế</span><strong>Thuế cơ sở 1 TP. Hồ Chí Minh</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dich-vu" style="background: var(--off);">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Dịch vụ</div>
+          <h2>Giải pháp nhân sự theo nhu cầu doanh nghiệp</h2>
+          <p class="muted">Tập trung vào cung ứng và quản lý nguồn lao động trong nước, giúp doanh nghiệp xây dựng đội ngũ ổn định, đúng năng lực.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Cung ứng lao động trong nước</h3>
+            <p class="muted">Kết nối ứng viên phù hợp với vị trí, ngành nghề và văn hóa doanh nghiệp trên toàn quốc.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Quản lý nguồn nhân lực</h3>
+            <p class="muted">Hỗ trợ sắp xếp, theo dõi và tối ưu hiệu suất đội ngũ theo mục tiêu kinh doanh.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Tư vấn tuyển dụng</h3>
+            <p class="muted">Xây dựng mô tả công việc, tiêu chí đánh giá và quy trình phỏng vấn chuyên nghiệp.</p>
+          </article>
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>Đồng hành nhân sự</h3>
+            <p class="muted">Hỗ trợ onboarding, giữ chân nhân tài và xây dựng chính sách đãi ngộ hợp lý.</p>
+          </article>
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>Nguồn lực theo dự án</h3>
+            <p class="muted">Cung cấp nhân sự theo giai đoạn triển khai, phù hợp nhu cầu tăng/giảm nhanh.</p>
+          </article>
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>Tư vấn tuân thủ</h3>
+            <p class="muted">Định hướng hồ sơ, hợp đồng và quy trình nhân sự theo quy định pháp luật Việt Nam.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="quy-trinh">
+      <div class="wrap why-grid">
+        <div>
+          <div class="kicker">Quy trình</div>
+          <h2>Làm việc minh bạch, đúng tiến độ</h2>
+          <p class="muted">Bốn bước rõ ràng giúp doanh nghiệp nắm tiến độ từ khảo sát nhu cầu đến bàn giao nhân sự.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><strong>Lắng nghe nhu cầu</strong><p>Khảo sát vị trí, số lượng, kỹ năng và ngân sách.</p></div></div>
+          <div class="step"><div class="num">2</div><div><strong>Sàng lọc ứng viên</strong><p>Tuyển chọn hồ sơ, phỏng vấn sơ bộ và xác minh thông tin.</p></div></div>
+          <div class="step"><div class="num">3</div><div><strong>Giới thiệu &amp; thống nhất</strong><p>Doanh nghiệp phỏng vấn, thống nhất điều kiện hợp tác.</p></div></div>
+          <div class="step"><div class="num">4</div><div><strong>Bàn giao &amp; theo dõi</strong><p>Hỗ trợ nhận việc và đồng hành giai đoạn đầu.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lien-he">
+      <div class="wrap contact-grid">
+        <div class="contact-box">
+          <div class="kicker">Liên hệ</div>
+          <h2 style="color:white;">Hãy để Mekong đồng hành cùng đội ngũ của bạn</h2>
+          <div class="contact-item">
+            <small>Điện thoại</small>
+            <a href="tel:+84565173912">+84 565 173 912</a>
+          </div>
+          <div class="contact-item">
+            <small>Email doanh nghiệp</small>
+            <a href="mailto:acevetany4219321@gmail.com">acevetany4219321@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <small>Trụ sở</small>
+            <strong>Phòng 1901, Tầng 19, Tòa nhà Sài Gòn Trade Center, Số 37 Tôn Đức Thắng, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</strong>
+          </div>
+          <div class="contact-item">
+            <small>Mã số thuế</small>
+            <strong>0315999152</strong>
+          </div>
+        </div>
+        <form id="contactForm">
+          <h3 style="color:var(--navy); font-size:22px;">Gửi yêu cầu tư vấn</h3>
+          <div class="form-row">
+            <div>
+              <label for="name">Họ và tên</label>
+              <input id="name" name="name" required placeholder="Nguyễn Văn A">
+            </div>
+            <div>
+              <label for="phone">Số điện thoại</label>
+              <input id="phone" name="phone" required placeholder="0900 000 000">
+            </div>
+          </div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="ban@congty.com">
+          <label for="need">Nhu cầu</label>
+          <select id="need" name="need">
+            <option>Cung ứng lao động</option>
+            <option>Quản lý nguồn nhân lực</option>
+            <option>Tư vấn tuyển dụng</option>
+            <option>Khác</option>
+          </select>
+          <label for="message">Nội dung</label>
+          <textarea id="message" name="message" placeholder="Mô tả vị trí, số lượng nhân sự cần hỗ trợ..."></textarea>
+          <button class="btn btn-gold" type="submit">Gửi thông tin</button>
+          <div class="form-note" id="formNote">Cảm ơn bạn. Vui lòng liên hệ trực tiếp qua email hoặc điện thoại để được phản hồi nhanh nhất.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <strong>CÔNG TY CỔ PHẦN CUNG ỨNG NHÂN LỰC MEKONG</strong>
+          <p>MEKONG SUPPLY OF HUMAN RESOURCES JOINT STOCK COMPANY</p>
+          <p>MST: 0315999152 • Người đại diện: Lý Ngọc Điệp</p>
+        </div>
+        <div>
+          <strong>Liên hệ</strong>
+          <p><a href="tel:+84565173912">+84 565 173 912</a></p>
+          <p><a href="mailto:acevetany4219321@gmail.com">acevetany4219321@gmail.com</a></p>
+        </div>
+        <div>
+          <strong>Địa chỉ</strong>
+          <p>P.1901, Tầng 19, Saigon Trade Center, 37 Tôn Đức Thắng, Q.1, TP.HCM</p>
+        </div>
+      </div>
+      <p class="copy">© 2026 Công ty Cổ phần Cung ứng Nhân lực Mekong. Mọi quyền được bảo lưu.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      const email = form.email.value.trim();
+      const need = form.need.value;
+      const message = form.message.value.trim();
+      const subject = encodeURIComponent("Yêu cầu tư vấn từ website Mekong HR");
+      const body = encodeURIComponent(
+        `Họ tên: ${name}\nĐiện thoại: ${phone}\nEmail: ${email}\nNhu cầu: ${need}\nNội dung: ${message}`
+      );
+      window.location.href = `mailto:acevetany4219321@gmail.com?subject=${subject}&body=${body}`;
+      document.getElementById("formNote").classList.add("show");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
